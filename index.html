@@ -9,16 +9,17 @@
 </head>
 <body>
     <h1>Pixel Art Maker</h1>
-    <div class="grid">
-        <p class="gridText">Grid Height:</p>
+    <form action="index.html" method="get" class="grid" id="form">
+        <label for="column" class="gridText">Grid Height:</label>
         <input id="column" type="number" name="column" class="gridInput" value="20">
-        <p class="gridText"> Grid width:</p>
+        <label for="row" class="gridText"> Grid width:</label>
         <input id="row" type="number" name="row" class="gridInput" value="20" >
-        <input id="submit" type="submit" value="clear" class="gridSubmit">
-    </div>
+        <input id="submitButt" type="submit" value="submit" class="gridSubmit">
+       <!-- <input id="submit" type="submit" value="clear" class="gridSubmit"> -->
+    </form>
 
     <div class="color">
-        <p>Pick a color</p>
+        <label for="color" class="gridText">Pick a color</label>
         <input id="color" type="color" name="colorPicker" >
     </div>
 
@@ -26,13 +27,12 @@
         <p>Design Canvas</p>
     </div>
 
-    <div id="grid" class="drawingGrid">
+    <table id="grid" class="drawingGrid">
 
-    </div>
+    </table>
 
     
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
 
-<script src="script.js"></script>
