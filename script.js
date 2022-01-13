@@ -1,4 +1,5 @@
-const clear = document.getElementById("submit");
+//const clear = document.getElementById("submit");
+const submit = document.getElementById("submitButt");
 const grid = document.getElementById("grid");
 
 // creates grid
@@ -28,8 +29,10 @@ function removeGrid()
 }
 
 // calculates new width of grid, removes the old one and creates the new grid with new width
-function gridChange()
+function gridChange(event)
 {
+    console.log(event);
+    event.preventDefault();
     grid.style.cssText =    `width: calc(${row.value} * 17px);
                             height: calc(${column.value} * 17px);
                             padding: 0;`;
@@ -47,7 +50,7 @@ function colorCell(evt)
     */
     //grid.style.cssText.target = `border: 1px solid black; width: 15px; height: 15px; background-color: ${color.value};`;
 
-
+    
     // bug occured because the parent div was selected and its width property changed to 15px, only happened with the "click" event, theirfore "mousedown" is used
     if(evt.target === grid)
     {
@@ -60,8 +63,11 @@ function colorCell(evt)
     
 }
 
-row.addEventListener("change", gridChange);
+
+
+/*row.addEventListener("change", gridChange);
 column.addEventListener("change", gridChange);
-gridChange();
+gridChange();*/
+submit.addEventListener("click", gridChange);
 grid.addEventListener(/*"click" ||*/ "mousedown", colorCell);
-clear.addEventListener("click", gridChange);
+//clear.addEventListener("click", gridChange);
